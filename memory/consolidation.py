@@ -6,6 +6,14 @@ from chromosomes.chromosome_classifier import (
     ChromosomeClassifier
 )
 
+from graph.knowledge_graph import (
+    KnowledgeGraph
+)
+
+from graph.graph_builder import (
+    GraphBuilder
+)
+
 
 class ConsolidationEngine:
 
@@ -29,6 +37,16 @@ class ConsolidationEngine:
 
         self.dna = (
             dna_memory
+        )
+
+        self.graph = (
+            KnowledgeGraph(
+                "storage/knowledge_graph.json"
+            )
+        )
+
+        self.graph_builder = (
+            GraphBuilder()
         )
 
     def run(self):
@@ -143,9 +161,29 @@ class ConsolidationEngine:
 
                     )
 
+
                     print(
                         "New Gene Saved"
                     )
+                    
+                relations = (
+                            self.graph_builder
+                            .extract(
+                                memory["text"]
+                            )
+                        )
+
+                for source,rel,target in relations:
+
+                        self.graph.add_relation(
+
+                            source,
+
+                            rel,
+
+                            target
+
+                        )
 
             else:
 

@@ -1,5 +1,8 @@
 import json
 
+from evolution.gene_traits import (
+    GeneTraits
+)
 # from torch import embedding
 
 
@@ -8,6 +11,9 @@ class DNAMemory:
     def __init__(self,path):
 
         self.path = path
+        self.traits = (
+    GeneTraits()
+      )
     
     def  save_all(
             self , 
@@ -147,7 +153,11 @@ class DNAMemory:
 
     "usage_count": 0,
 
-    "generation": 0
+    "generation": 0,
+    "traits":
+
+        self.traits
+        .create_traits()
 })
 
         self.save(genes)

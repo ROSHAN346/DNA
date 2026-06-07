@@ -1,0 +1,16 @@
+[
+    {
+        "query": "dog",
+        "result": "Dogs are loyal pets",
+        "source": "NEURAL",
+        "score": 0.49764344453316656,
+        "timestamp": "2026-06-08 02:07:59.355368"
+    },
+    {
+        "query": "horse",
+        "result": "Horse is the best comrade",
+        "source": "DNA",
+        "score": 0.9055986733085587,
+        "timestamp": "2026-06-08 02:22:07.107735"
+    }
+]

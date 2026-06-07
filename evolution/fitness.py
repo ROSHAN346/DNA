@@ -1,14 +1,32 @@
+from evolution.gene_traits import (
+    GeneTraits
+)
+
+
 class FitnessEngine:
+
+    def __init__(self):
+
+        self.traits = (
+            GeneTraits()
+        )
 
     def calculate(
 
         self,
 
-        gene,
-
-        neural_memory=None
+        gene
 
     ):
+
+        gene = (
+
+            self.traits
+            .ensure_traits(
+                gene
+            )
+
+        )
 
         strength = gene.get(
             "strength",
@@ -25,20 +43,14 @@ class FitnessEngine:
             0
         )
 
-        importance = 0
-        access_count = 0
+        trait_bonus = (
 
-        if neural_memory:
-
-            importance = neural_memory.get(
-                "importance",
-                0
+            self.traits
+            .fitness_bonus(
+                gene["traits"]
             )
 
-            access_count = neural_memory.get(
-                "access_count",
-                0
-            )
+        )
 
         fitness = (
 
@@ -54,11 +66,7 @@ class FitnessEngine:
 
             +
 
-            (0.5 * importance)
-
-            +
-
-            (0.01 * access_count)
+            (0.3 * trait_bonus)
 
         )
 

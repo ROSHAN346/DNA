@@ -2,8 +2,26 @@ from utils.cosine_similarity import (
     cosine_similarity
 )
 
+from retrieval.trait_retrieval import (
+    TraitRetrieval
+)
+
+from evolution.gene_traits import (
+    GeneTraits
+)
+
 
 class DNASearch:
+
+    def __init__(self):
+
+        self.traits = (
+            TraitRetrieval()
+        )
+
+        self.gene_traits = (
+            GeneTraits()
+        )
 
     def search(
 
@@ -21,21 +39,47 @@ class DNASearch:
 
         for gene in genes:
 
-            score = cosine_similarity(
+            gene = (
 
-                query_embedding,
-
-                gene["embedding"]
+                self.gene_traits
+                .ensure_traits(
+                    gene
+                )
 
             )
 
-            score *= gene["strength"]
+            semantic_score = (
+
+                cosine_similarity(
+
+                    query_embedding,
+
+                    gene["embedding"]
+
+                )
+
+            )
+
+            final_score = (
+
+                self.traits
+                .score(
+
+                    semantic_score,
+
+                    gene
+
+                )
+
+            )
 
             ranked.append(
 
                 (
-                    score,
+                    final_score,
+
                     gene
+
                 )
 
             )
@@ -44,7 +88,8 @@ class DNASearch:
 
             reverse=True,
 
-            key=lambda x:x[0]
+            key=lambda x: x[0]
+
         )
 
         return ranked[:top_k]

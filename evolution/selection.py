@@ -3,7 +3,7 @@ from evolution.fitness import (
 )
 
 
-class PruningEngine:
+class SelectionEngine:
 
     def __init__(self):
 
@@ -11,35 +11,44 @@ class PruningEngine:
             FitnessEngine()
         )
 
-    def prune(
+    def select_top(
 
         self,
 
         genes,
 
-        threshold=0.70
+        top_k=3
 
     ):
 
-        kept = []
-        removed = []
+        ranked = []
+
         for gene in genes:
-            fitness = (
+
+            score = (
+
                 self.fitness
                 .calculate(
                     gene
                 )
+
             )
 
-            if fitness >= threshold:
-                kept.append(
+            ranked.append(
+
+                (
+                    score,
                     gene
                 )
-            else:
-                removed.append(
-                    gene
-                )
-        return (
-            kept,
-            removed
+
+            )
+
+        ranked.sort(
+
+            reverse=True,
+
+            key=lambda x:x[0]
+
         )
+
+        return ranked[:top_k]

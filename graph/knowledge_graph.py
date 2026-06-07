@@ -1,23 +1,85 @@
+import json
+
+
 class KnowledgeGraph:
 
-    def __init__(self):
+    def __init__(self, path):
 
-        self.graph = {}
+        self.path = path
+
+    def load(self):
+
+        try:
+
+            with open(
+                self.path,
+                "r"
+            ) as f:
+
+                return json.load(f)
+
+        except:
+
+            return {}
+
+    def save(self, graph):
+
+        with open(
+            self.path,
+            "w"
+        ) as f:
+
+            json.dump(
+                graph,
+                f,
+                indent=4
+            )
 
     def add_relation(
+
         self,
+
         source,
+
+        relation,
+
         target
+
     ):
+        print(
+    f"Adding relation: {source} {relation} {target}"
+)
 
-        if source not in self.graph:
-            self.graph[source] = []
+        graph = self.load()
 
-        self.graph[source].append(target)
+        if source not in graph:
 
-    def neighbors(
+            graph[source] = []
+
+        edge = {
+
+            "relation": relation,
+
+            "target": target
+
+        }
+
+        if edge not in graph[source]:
+
+            graph[source].append(
+                edge
+            )
+
+        self.save(graph)
+
+    def get_neighbors(
         self,
         node
     ):
 
-        return self.graph.get(node,[])
+        graph = self.load()
+
+        return graph.get(
+            node,
+            []
+        )

@@ -1,0 +1,44 @@
+{
+    "Dog": [
+        {
+            "relation": "is_a",
+            "target": "Animal"
+        }
+    ],
+    "Python": [
+        {
+            "relation": "is_a",
+            "target": "ProgrammingLanguage"
+        }
+    ],
+    "Cat": [
+        {
+            "relation": "is_a",
+            "target": "Animal"
+        }
+    ],
+    "Animal": [
+        {
+            "relation": "is_a",
+            "target": "LivingThing"
+        }
+    ],
+    "LivingThing": [
+        {
+            "relation": "is_a",
+            "target": "Organism"
+        }
+    ],
+    "Organism": [
+        {
+            "relation": "is_a",
+            "target": "Entity"
+        }
+    ],
+    "ye naaya data hoga": [
+        {
+            "relation": "related_to",
+            "target": "Jello bhai ka data hoga"
+        }
+    ]
+}

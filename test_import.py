@@ -4,4 +4,12 @@ from memory.dna_memory import DNAMemory
 from chromosomes.chromosome_classifier import ChromosomeClassifier
 from utils.similarity import dna_similarity
 
-print("All imports successful")
+from graph.graph_builder import GraphBuilder
+
+builder = GraphBuilder()
+
+print(
+    builder.extract(
+        "Dogs are loyal pets"
+    )
+)
