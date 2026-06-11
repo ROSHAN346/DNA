@@ -1,164 +1,98 @@
+import os
+import sys
+import json
+
+# ANSI colors
+CYAN = '\033[96m'
+GREEN = '\033[92m'
+YELLOW = '\033[93m'
+MAGENTA = '\033[95m'
+BLUE = '\033[94m'
+RED = '\033[91m'
+BOLD = '\033[1m'
+RESET = '\033[0m'
+CLEAR = '\033[2J\033[H'
+
 from chromosomes.chromosome_classifier import ChromosomeClassifier
 from evolution.pruning import PruningEngine
 from utils.cosine_similarity import cosine_similarity
-from memory.neural_memory import (
-    NeuralMemory
-)
-
-from learning.experience_memory import (
-    ExperienceMemory
-)
-
-from learning.learning_engine import (
-    LearningEngine
-)
-from evolution.crossover import (
-    CrossoverEngine
-)
-
-from evolution.gene_cleanup import (
-    GeneCleanup
-)
-
-from concepts.concept_discovery import (
-    ConceptDiscovery
-)
-
-from concepts.concept_engine import (
-    ConceptEngine
-)
-
-from attention.dynamic_attention import (
-    DynamicAttention
-)
-
-from evolution.selection import (
-    SelectionEngine
-)
-from evolution.mutation import (
-    MutationEngine
-)
-
-from evolution.fitness import (
-    FitnessEngine
-)
-
-from retrieval.hybrid_search import (
-    HybridSearch
-)
-
-from memory.dna_memory import (
-    DNAMemory
-)
-
-from memory.reinforcement import (
-    ReinforcementEngine
-)
-
-from memory.consolidation import (
-    ConsolidationEngine
-)
-
-from attention.dna_attention import (
-    DNAAttention
-)
-
-from encoder.semantic_dna import (
-    SemanticDNAEncoder
-)
-
-from utils.similarity import (
-    dna_similarity
-)
-
-from graph.graph_search import (
-    GraphSearch
-)
-
-from graph.knowledge_graph import (
-    KnowledgeGraph
-)
-
-from evolution.gene_traits import (
-    GeneTraits
-)
-
-from reasoning.inference_engine import (
-    InferenceEngine
-)
+from memory.neural_memory import NeuralMemory
+from evolution.mating_engine import MatingEngine
+from learning.experience_memory import ExperienceMemory
+from learning.learning_engine import LearningEngine
+from evolution.crossover import CrossoverEngine
+from evolution.gene_cleanup import GeneCleanup
+from concepts.concept_discovery import ConceptDiscovery
+from concepts.concept_engine import ConceptEngine
+from attention.dynamic_attention import DynamicAttention
+from evolution.selection import SelectionEngine
+from evolution.mutation import MutationEngine
+from evolution.fitness import FitnessEngine
+from retrieval.hybrid_search import HybridSearch
+from memory.dna_memory import DNAMemory
+from memory.reinforcement import ReinforcementEngine
+from memory.consolidation import ConsolidationEngine
+from attention.dna_attention import DNAAttention
+from encoder.semantic_dna import SemanticDNAEncoder
+from utils.similarity import dna_similarity
+from graph.graph_search import GraphSearch
+from graph.knowledge_graph import KnowledgeGraph
+from evolution.gene_traits import GeneTraits
+from reasoning.inference_engine import InferenceEngine
+from learning.policy_engine import PolicyEngine
 
 
-neural = NeuralMemory(
-    "storage/neural_memory.json"
-)
-
-fitness_engine = (
-    FitnessEngine()
-)
-pruning_engine = (
-    PruningEngine()
-)
-
-crossover_engine = (
-    CrossoverEngine()
-)
-
-selection_engine = (
-    SelectionEngine()
-)
-
-
-mutation_engine = (
-    MutationEngine()
-)
-
-graph = (
-    KnowledgeGraph(
-        "storage/knowledge_graph.json"
-    )
-)
-
-graph_search = (
-    GraphSearch()
-)
-
-dna = DNAMemory(
-    "storage/dna_memory.json"
-)
-
-reinforcement = (
-    ReinforcementEngine())
-
-
-attention = (
-    DynamicAttention()
-)
-
-concept_engine = (
-    ConceptEngine()
-)
-
-inference_engine = (
-    InferenceEngine()
-)
-
-concept_discovery = (
-    ConceptDiscovery()
-)
-
-cleanup_engine = (
-    GeneCleanup()
-)
-
-experience_memory = (
-    ExperienceMemory()
-)
-
-learning_engine = (
-    LearningEngine()
-)
-
+# Initialize all engines
+neural = NeuralMemory("storage/neural_memory.json")
+policy = PolicyEngine()
+mating_engine = MatingEngine()
+fitness_engine = FitnessEngine()
+pruning_engine = PruningEngine()
+crossover_engine = CrossoverEngine()
+selection_engine = SelectionEngine()
+mutation_engine = MutationEngine()
+graph = KnowledgeGraph("storage/knowledge_graph.json")
+graph_search = GraphSearch()
+dna = DNAMemory("storage/dna_memory.json")
+reinforcement = ReinforcementEngine()
+attention = DynamicAttention()
+concept_engine = ConceptEngine()
+inference_engine = InferenceEngine()
+concept_discovery = ConceptDiscovery()
+cleanup_engine = GeneCleanup()
+experience_memory = ExperienceMemory()
+learning_engine = LearningEngine()
 encoder = SemanticDNAEncoder()
+
+
+def print_header(title):
+    print(f"\n{BOLD}{CYAN}═══ {title} ═══{RESET}")
+
+
+def print_success(msg):
+    print(f"{GREEN}✓ {msg}{RESET}")
+
+
+def print_info(msg):
+    print(f"{YELLOW}ℹ {msg}{RESET}")
+
+
+def print_error(msg):
+    print(f"{RED}✗ {msg}{RESET}")
+
+
+def print_menu_item(num, text, desc=""):
+    print(f"{BLUE}{num:2}{RESET}  {text}")
+
+
+def show_stats():
+    genes = dna.get_all()
+    memories = neural.get_all()
+    experiences = experience_memory.get_all()
+    print(f"\n{BOLD}📊 Memory Stats:{RESET}")
+    print(f"   DNA Genes: {len(genes)}")
+    print(f"   Neural Memories: {len(memories)}")
+    print(f"   Experiences: {len(experiences)}")
 
 
 while True:
@@ -323,18 +257,24 @@ while True:
 
                 # Reinforce DNA Memory
 
-                for gene in dna_genes:
-
-                    if gene["knowledge"] == text:
-
                         reinforcement.reinforce_gene(
-                            gene
+                            gene,
+                            dna_genes
                         )
 
-                        attention.activate(
+                        policy.reward_gene(
 
+                        gene["knowledge"]
+
+                        )
+
+                        policy.reward_chromosome(
                             gene["chromosome"]
+                        )
 
+                        attention.decay()
+                        attention.activate(
+                            gene["chromosome"]
                         )
 
                         print(
@@ -361,14 +301,24 @@ while True:
         break
     elif choice == "5":
         genes = dna.get_all()
-        print("\nDNA Genes:")
+        print("\nDNA Genes & Regulatory Network:")
 
         for gene in genes:
-            print(
-                gene["knowledge"],
-                "#Strength:", gene["strength"],
-                "#Usage Count:", gene["usage_count"]
-             )
+            print(f"\nGene: {gene['knowledge']}")
+            print(f"  Chromosome: {gene['chromosome']}")
+            print(f"  Strength: {gene['strength']} | Base Expr: {gene.get('base_expression', 0.1)} | Dynamic Expr: {gene.get('expression', 0.0)} | Usage: {gene['usage_count']}")
+            
+            promoters = gene.get("promoters", {})
+            if promoters:
+                print("  Promoted By:")
+                for k, w in promoters.items():
+                    print(f"    <- {k} (weight: {w})")
+            
+            repressors = gene.get("repressors", {})
+            if repressors:
+                print("  Repressed By:")
+                for k, w in repressors.items():
+                    print(f"    |- {k} (weight: {w})")
 
         print("\nEnd of Genes")
 
@@ -405,10 +355,26 @@ while True:
         genes = (
             dna.get_all()
         )
-        kept,removed = (
-            pruning_engine.prune(
-                genes
+        experiences = (
+    experience_memory
+    .get_all()
+)
+
+        kept, removed = (
+
+            pruning_engine
+            .prune(
+
+                genes,
+
+                experiences,
+
+                threshold=0.70,
+
+                max_population=50
+
             )
+
         )
         dna.save_all(
             kept
@@ -487,7 +453,8 @@ while True:
 
                 mutation_engine
                 .create_child(
-                    parent
+                    parent,
+                    genes
                 )
 
             )
@@ -515,58 +482,66 @@ while True:
             )
     elif choice == "10":
 
-        genes = dna.get_all()
+                genes = dna.get_all()
 
-        selected = (
+                experiences = (
 
-            selection_engine
-            .select_top(
-                genes,
-                2
-            )
-
-        )
-
-        if len(selected) < 2:
-
-            print(
-                "Need at least 2 genes"
-            )
-
-        else:
-
-            score_a,parent_a = selected[0]
-
-            score_b,parent_b = selected[1]
-
-            child = (
-
-                crossover_engine
-                .create_child(
-
-                    parent_a,
-
-                    parent_b
+                    experience_memory
+                    .get_all()
 
                 )
 
-            )
+                pair = (
 
-            genes.append(
-                child
-            )
+                    mating_engine
+                    .select_pair(
 
-            dna.save_all(
-                genes
-            )
+                        genes,
 
-            print(
-                "\nChild Gene Created"
-            )
+                        experiences
 
-            print(
-                child["knowledge"]
-            )
+                    )
+
+                )
+
+                if pair is None:
+
+                    print(
+                        "Need at least 2 genes"
+                    )
+
+                else:
+
+                    parent_a, parent_b = pair
+
+                    child = (
+
+                        crossover_engine
+                        .create_child(
+
+                            parent_a,
+
+                            parent_b
+
+                        )
+
+                    )
+
+                    genes.append(
+                        child
+                    )
+
+                    dna.save_all(
+                        genes
+                    )
+
+                    print(
+                        "\nChild Gene Created"
+                    )
+
+                    print(
+                        child["knowledge"]
+                    )
     elif choice == "11":
 
         node = input(

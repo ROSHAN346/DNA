@@ -1,7 +1,11 @@
-from sklearn.cluster import KMeans
 import json
+
 from concepts.clustering import (
     ClusteringEngine
+)
+
+from concepts.concept_naming import (
+    ConceptNaming
 )
 
 
@@ -13,15 +17,40 @@ class ConceptDiscovery:
             ClusteringEngine()
         )
 
-    def save(
+        self.naming = (
+            ConceptNaming()
+        )
+
+    def load(
 
     self,
-
-    concepts,
 
     path="storage/discovered_concepts.json"
 
 ):
+
+        try:
+
+            with open(
+                path,
+                "r"
+            ) as f:
+
+                return json.load(f)
+
+        except:
+
+            return []
+
+    def save(
+
+        self,
+
+        concepts,
+
+        path="storage/discovered_concepts.json"
+
+    ):
 
         with open(
             path,
@@ -48,64 +77,108 @@ class ConceptDiscovery:
 
             return []
 
-        embeddings = []
+        embeddings = [
 
-        for gene in genes:
+            gene["embedding"]
 
-            embeddings.append(
+            for gene in genes
 
-                gene["embedding"]
-
-            )
+        ]
 
         labels = (
 
-    self.clustering
-    .cluster(
+            self.clustering
+            .cluster(
 
-        embeddings,
+                embeddings,
 
-        n_clusters
+                n_clusters
 
-    )
+            )
 
-)
+        )
+
+        if labels is None:
+
+            return []
 
         clusters = {}
 
-        for gene,label in zip(
+        for gene, label in zip(
             genes,
             labels
         ):
+
+            label = int(label)
 
             if label not in clusters:
 
                 clusters[label] = []
 
             clusters[label].append(
-
-                gene["knowledge"]
-
+                gene
             )
 
         result = []
 
-        for label,members in clusters.items():
+        for label, members in clusters.items():
+
+            texts = [
+
+                member["knowledge"]
+
+                for member in members
+
+            ]
+
+            chromosomes = [
+
+                member.get(
+
+                    "chromosome",
+
+                    "general"
+
+                )
+
+                for member in members
+
+            ]
+
+            concept_name = (
+
+                self.naming
+                .generate(
+                    texts,chromosomes
+                )
+
+            )
 
             result.append(
 
                 {
 
-                    "cluster": int(label),
+                    "cluster":
+                        label,
 
-                    "size": len(
-                        members
-                    ),
+                    "concept":
+                        concept_name,
 
-                    "members": members
+                    "size":
+                        len(members),
+
+                    "members":
+                        texts,
+
+                    "chromosomes":
+                        chromosomes
 
                 }
 
             )
+
+        self.save(
+            result
+        )
 
         return result

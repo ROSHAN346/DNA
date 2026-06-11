@@ -1,0 +1,508 @@
+INFO:     127.0.0.1:61423 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61423 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61423 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50635 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59986 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57764 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52048 - "POST /search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56581 - "GET /evolution/fitness HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56886 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56887 - "GET /graph/inferences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54574 - "GET /attention HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59824 - "GET /concepts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52034 - "POST /concepts/discover?n_clusters=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52097 - "GET /concepts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64880 - "POST /concepts/discover?n_clusters=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56544 - "GET /concepts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62214 - "POST /concepts/discover?n_clusters=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63042 - "GET /concepts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59786 - "GET /learning/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59787 - "GET /learning/experiences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59789 - "GET /learning/policy HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53230 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49733 - "POST /memory/add HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53166 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51056 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61803 - "POST /search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60987 - "GET /evolution/fitness HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58866 - "POST /evolution/crossover HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60391 - "GET /evolution/fitness HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55820 - "POST /evolution/prune HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60324 - "GET /evolution/fitness HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61257 - "POST /evolution/prune HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51458 - "GET /evolution/fitness HTTP/1.1" 200 OK
+
+Similarity: 0.0429
+Memory Reboot
+Python is a programming language
+
+Similarity: 0.1586
+Hello world
+Python is a programming language
+
+Similarity: 0.1268
+Hello world
+Memory Reboot
+
+Similarity: 0.0986
+Concept: horse best comrade cats love
+Python is a programming language
+
+Similarity: -0.028
+Concept: horse best comrade cats love
+Memory Reboot
+
+Similarity: 0.0887
+Concept: horse best comrade cats love
+Hello world
+
+Similarity: 1.0
+Concept: cats love python programming language
+Python is a programming language
+
+Similarity: 0.1225
+Cats love milk
+Python is a programming language
+
+Similarity: -0.014
+Cats love milk
+Memory Reboot
+
+Similarity: 0.1272
+Cats love milk
+Hello world
+
+Similarity: 0.3548
+Cats love milk
+Concept: horse best comrade cats love
+
+Similarity: 0.0967
+Horse is the best comrade
+Python is a programming language
+
+Similarity: 0.0031
+Horse is the best comrade
+Memory Reboot
+
+Similarity: 0.123
+Horse is the best comrade
+Hello world
+
+Similarity: 0.2519
+Horse is the best comrade
+Concept: horse best comrade cats love
+
+Similarity: 0.1784
+Horse is the best comrade
+Cats love milk
+
+Similarity: 0.0485
+Virat is a good boy
+Python is a programming language
+
+Similarity: -0.0477
+Virat is a good boy
+Memory Reboot
+
+Similarity: 0.1317
+Virat is a good boy
+Hello world
+
+Similarity: 0.1232
+Virat is a good boy
+Concept: horse best comrade cats love
+
+Similarity: 0.1009
+Virat is a good boy
+Cats love milk
+
+Similarity: 0.1778
+Virat is a good boy
+Horse is the best comrade
+INFO:     127.0.0.1:56946 - "POST /evolution/cleanup HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62543 - "GET /evolution/fitness HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57354 - "POST /evolution/mutate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52396 - "GET /evolution/fitness HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64136 - "POST /evolution/crossover HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62420 - "GET /evolution/fitness HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58170 - "POST /evolution/prune HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65455 - "GET /evolution/fitness HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55322 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60669 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63346 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50062 - "GET /evolution/fitness HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52325 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52326 - "GET /graph/inferences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56968 - "GET /attention HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59906 - "GET /concepts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57609 - "GET /attention HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55505 - "GET /learning/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55506 - "GET /learning/experiences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55507 - "GET /learning/policy HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57883 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57884 - "GET /graph/inferences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60354 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59993 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61212 - "GET /evolution/fitness HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61615 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61616 - "GET /graph/inferences HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:55708 - "GET /attention HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49691 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56124 - "GET /evolution/fitness HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59779 - "POST /search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65216 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65218 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65221 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65222 - "GET /graph/inferences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55594 - "POST /graph/infer HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55919 - "POST /graph/infer HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65216 - "POST /graph/infer HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65027 - "POST /graph/infer HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53984 - "POST /graph/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57412 - "POST /graph/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57336 - "GET /attention HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50487 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50488 - "GET /graph/inferences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53500 - "GET /evolution/fitness HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60776 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63243 - "GET /stats HTTP/1.1" 200 OK
+
+Found 8 memories
+
+----------------
+Memory: Dogs are loyal pets
+Importance: 0.71
+Passed Threshold
+Chromosome: animals
+Genome Length: 384
+New Gene Saved
+Adding relation: Dogs are Loyal Pets
+
+----------------
+Memory: Cats love milk
+Importance: 0.82
+Passed Threshold
+Chromosome: animals
+Genome Length: 384
+Existing Gene Strengthened
+Adding relation: Cats related_to Love
+Adding relation: Love related_to Milk
+
+----------------
+Memory: Python is a programming language
+Importance: 0.6
+Passed Threshold
+Chromosome: programming
+Genome Length: 384
+Existing Gene Strengthened
+Adding relation: Python is_a Programming Language
+
+----------------
+Memory: Horse is the best comrade
+Importance: 0.93
+Passed Threshold
+Chromosome: general
+Genome Length: 384
+Existing Gene Strengthened
+Adding relation: Horse is The Best
+
+----------------
+Memory: Hello world
+Importance: 0.6
+Passed Threshold
+Chromosome: general
+Genome Length: 384
+Existing Gene Strengthened
+Adding relation: Hello related_to World
+
+----------------
+Memory: Memory Reboot
+Importance: 0.6
+Passed Threshold
+Chromosome: general
+Genome Length: 384
+Existing Gene Strengthened
+Adding relation: Memory related_to Reboot
+
+----------------
+Memory: Virat is a good boy
+Importance: 0.82
+Passed Threshold
+Chromosome: general
+Genome Length: 384
+Existing Gene Strengthened
+Adding relation: Virat is_a Good Boy
+
+----------------
+Memory: Nature is the best way to grasp the Knowledge
+Importance: 0.6
+Passed Threshold
+Chromosome: general
+Genome Length: 384
+New Gene Saved
+Adding relation: Nature is The Best
+
+Consolidation Complete
+INFO:     127.0.0.1:55979 - "POST /memory/consolidate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50062 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55538 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55539 - "GET /graph/inferences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52117 - "POST /graph/search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49671 - "GET /evolution/fitness HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51135 - "GET /attention HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63944 - "GET /concepts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57178 - "POST /concepts/discover?n_clusters=6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49181 - "GET /concepts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59162 - "GET /learning/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59163 - "GET /learning/experiences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59164 - "GET /learning/policy HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51098 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63077 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61733 - "GET /stats HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:54465 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50405 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54397 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54399 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54401 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50139 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64087 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51613 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56505 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62073 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55276 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50624 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51128 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62719 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58999 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49672 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56400 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61425 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56346 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64918 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58328 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54311 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50681 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50684 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50685 - "GET /graph/inferences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50687 - "GET /attention HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60784 - "GET /concepts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55568 - "GET /learning/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55569 - "GET /learning/experiences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55570 - "GET /learning/policy HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63406 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54348 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52597 - "GET /stats HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:65455 - "GET /evolution/fitness HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56071 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53016 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61521 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61083 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64909 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63294 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63295 - "GET /graph/inferences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57906 - "GET /attention HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51135 - "GET /concepts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54260 - "GET /learning/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54262 - "GET /learning/experiences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54263 - "GET /learning/policy HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61966 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52971 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50841 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58750 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63933 - "POST /search HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65100 - "GET /evolution/fitness HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50486 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50487 - "GET /graph/inferences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58007 - "GET /attention HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63502 - "GET /concepts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59622 - "GET /learning/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59624 - "GET /learning/policy HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59623 - "GET /learning/experiences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63443 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64689 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60581 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58633 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50366 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58768 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54828 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59034 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54478 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61743 - "GET /stats HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:65216 - "POST /memory/add HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62910 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58094 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56720 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55942 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65075 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53559 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62575 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52722 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50524 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55984 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49840 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60302 - "GET /evolution/fitness HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51321 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51322 - "GET /graph/inferences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57635 - "GET /attention HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60589 - "GET /concepts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53325 - "GET /learning/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53327 - "GET /learning/policy HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53326 - "GET /learning/experiences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59308 - "GET /concepts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60134 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57534 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59930 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49671 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55805 - "GET /evolution/fitness HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55115 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55116 - "GET /graph/inferences HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:49789 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60875 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60127 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59082 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52582 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52583 - "GET /graph/inferences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55522 - "GET /evolution/fitness HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65459 - "GET /graph/inferences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65458 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59188 - "GET /attention HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53610 - "GET /concepts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56422 - "GET /learning/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56423 - "GET /learning/experiences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56424 - "GET /learning/policy HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55757 - "GET /evolution/fitness HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60261 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62749 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62587 - "GET /stats HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:58602 - "GET /stats HTTP/1.1" 200 OK
+
+Found 9 memories
+
+----------------
+Memory: Dogs are loyal pets
+Importance: 0.71
+Passed Threshold
+Created new chromosome: dogs_loyal_pets
+Chromosome: dogs_loyal_pets
+Genome Length: 384
+Existing Gene Strengthened
+Adding relation: Dogs are Loyal Pets
+
+----------------
+Memory: Cats love milk
+Importance: 0.82
+Passed Threshold
+Created new chromosome: cats_love_milk
+Chromosome: cats_love_milk
+Genome Length: 384
+Existing Gene Strengthened
+Adding relation: Cats related_to Love
+Adding relation: Love related_to Milk
+
+----------------
+Memory: Python is a programming language
+Importance: 0.6
+Passed Threshold
+Created new chromosome: python_programming_language
+Chromosome: python_programming_language
+Genome Length: 384
+Existing Gene Strengthened
+Adding relation: Python is_a Programming Language
+
+----------------
+Memory: Horse is the best comrade
+Importance: 1.04
+Passed Threshold
+Created new chromosome: horse_best_comrade
+Chromosome: horse_best_comrade
+Genome Length: 384
+Existing Gene Strengthened
+Adding relation: Horse is The Best
+
+----------------
+Memory: Hello world
+Importance: 0.6
+Passed Threshold
+Created new chromosome: hello_world
+Chromosome: hello_world
+Genome Length: 384
+Existing Gene Strengthened
+Adding relation: Hello related_to World
+
+----------------
+Memory: Memory Reboot
+Importance: 0.6
+Passed Threshold
+Created new chromosome: memory_reboot
+Chromosome: memory_reboot
+Genome Length: 384
+Existing Gene Strengthened
+Adding relation: Memory related_to Reboot
+
+----------------
+Memory: Virat is a good boy
+Importance: 0.82
+Passed Threshold
+Created new chromosome: virat_good
+Chromosome: virat_good
+Genome Length: 384
+Existing Gene Strengthened
+Adding relation: Virat is_a Good Boy
+
+----------------
+Memory: Nature is the best way to grasp the Knowledge
+Importance: 0.6
+Passed Threshold
+Created new chromosome: nature_best_grasp
+Chromosome: nature_best_grasp
+Genome Length: 384
+Existing Gene Strengthened
+Adding relation: Nature is The Best
+
+----------------
+Memory: Something Fishy here
+Importance: 0.6
+Passed Threshold
+Created new chromosome: something_fishy_here
+Chromosome: something_fishy_here
+Genome Length: 384
+New Gene Saved
+Adding relation: Something related_to Fishy
+Adding relation: Fishy related_to Here
+
+Consolidation Complete
+INFO:     127.0.0.1:55439 - "POST /memory/consolidate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64149 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54625 - "GET /evolution/fitness HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64664 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64665 - "GET /graph/inferences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50496 - "GET /attention HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57210 - "GET /concepts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59374 - "GET /learning/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59375 - "GET /learning/experiences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59376 - "GET /learning/policy HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59711 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63181 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50807 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61425 - "POST /memory/add HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52391 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54900 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54024 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65217 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59239 - "GET /attention HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63373 - "GET /concepts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57484 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49734 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56663 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52494 - "GET /evolution/fitness HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52496 - "GET /stats HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:63993 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64652 - "GET /evolution/fitness HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52695 - "GET /memory/dna HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49261 - "GET /stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51373 - "GET /attention HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49911 - "GET /concepts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61725 - "GET /learning/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61726 - "GET /learning/experiences HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61727 - "GET /learning/policy HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54172 - "GET /stats HTTP/1.1" 200 OK

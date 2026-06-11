@@ -1,44 +1,38 @@
 {
-    "Dog": [
+    "How": [
         {
-            "relation": "is_a",
-            "target": "Animal"
+            "relation": "are",
+            "target": "You Guys"
         }
     ],
     "Python": [
         {
             "relation": "is_a",
-            "target": "ProgrammingLanguage"
+            "target": "Programming Language"
         }
     ],
-    "Cat": [
-        {
-            "relation": "is_a",
-            "target": "Animal"
-        }
-    ],
-    "Animal": [
-        {
-            "relation": "is_a",
-            "target": "LivingThing"
-        }
-    ],
-    "LivingThing": [
-        {
-            "relation": "is_a",
-            "target": "Organism"
-        }
-    ],
-    "Organism": [
-        {
-            "relation": "is_a",
-            "target": "Entity"
-        }
-    ],
-    "ye naaya data hoga": [
+    "Cats": [
         {
             "relation": "related_to",
-            "target": "Jello bhai ka data hoga"
+            "target": "Love"
+        }
+    ],
+    "Love": [
+        {
+            "relation": "related_to",
+            "target": "Drink"
+        }
+    ],
+    "Drink": [
+        {
+            "relation": "related_to",
+            "target": "Milk"
+        }
+    ],
+    "Hose": [
+        {
+            "relation": "is",
+            "target": "The Best"
         }
     ]
 }

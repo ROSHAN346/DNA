@@ -48,59 +48,29 @@ class DynamicAttention:
             )
 
     def activate(
-
         self,
-
         chromosome
-
     ):
-
         data = self.load()
-
-        data[chromosome] = (
-
-            data.get(
-                chromosome,
-                0
-            )
-
-            +
-
-            1
-
-        )
-
+        current = data.get(chromosome, 0.0)
+        # Bounded activation between 0.0 and 1.0
+        data[chromosome] = round(min(1.0, current + 0.3), 3)
         self.save(data)
 
     def get_weight(
-
         self,
-
         chromosome
-
     ):
-
         data = self.load()
-
-        value = data.get(
-            chromosome,
-            0
-        )
-
-        return min(
-
-            value * 0.05,
-
-            1.0
-
-        )
+        return data.get(chromosome, 0.0)
 
     def decay(self):
-
         data = self.load()
-
-        for key in data:
-
-            data[key] *= 0.95
-
+        for key in list(data.keys()):
+            new_val = round(data[key] * 0.90, 3)
+            if new_val < 0.05:
+                # Prune negligible attention to clean storage
+                data.pop(key, None)
+            else:
+                data[key] = new_val
         self.save(data)

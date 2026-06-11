@@ -1,25 +1,35 @@
 [
     {
-        "cluster": 0,
-        "size": 3,
+        "cluster": 2,
+        "concept": "hello_guys",
+        "size": 1,
         "members": [
-            "Dogs are loyal pets",
-            "Cats love milk",
-            "Dogs are loyal pets + Python is a programming language"
+            "Hello . How are  you guys"
+        ],
+        "chromosomes": [
+            "hello_guys"
+        ]
+    },
+    {
+        "cluster": 0,
+        "concept": "python_programming_language",
+        "size": 1,
+        "members": [
+            "Python is a programming language"
+        ],
+        "chromosomes": [
+            "python_programming_language"
         ]
     },
     {
         "cluster": 1,
+        "concept": "hello_guys",
         "size": 1,
         "members": [
-            "Python is a programming language"
-        ]
-    },
-    {
-        "cluster": 2,
-        "size": 1,
-        "members": [
-            "Horse is the best comrade"
+            "Concept: hello guys python programming language"
+        ],
+        "chromosomes": [
+            "hello_guys"
         ]
     }
 ]
