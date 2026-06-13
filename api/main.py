@@ -1,5 +1,6 @@
 import sys
 import os
+import shutil
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from fastapi import FastAPI, HTTPException
@@ -40,20 +41,52 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Strip /api prefix middleware for routing compatibility
+@app.middleware("http")
+async def clean_api_prefix(request, call_next):
+    path = request.scope.get("path", "")
+    if path.startswith("/api"):
+        new_path = path[4:]
+        if not new_path:
+            new_path = "/"
+        request.scope["path"] = new_path
+    return await call_next(request)
+
+# Detect Vercel execution environment
+IS_VERCEL = os.environ.get("VERCEL") == "1" or os.environ.get("VERCEL_ENV") is not None
+STORAGE_DIR = "storage"
+
+if IS_VERCEL:
+    # Under Vercel's read-only filesystem, copy storage files to /tmp/storage
+    tmp_storage = "/tmp/storage"
+    if not os.path.exists(tmp_storage):
+        os.makedirs(tmp_storage, exist_ok=True)
+    if os.path.exists("storage"):
+        for item in os.listdir("storage"):
+            src = os.path.join("storage", item)
+            dst = os.path.join(tmp_storage, item)
+            if os.path.isdir(src):
+                if not os.path.exists(dst):
+                    shutil.copytree(src, dst)
+            else:
+                if not os.path.exists(dst):
+                    shutil.copy2(src, dst)
+    STORAGE_DIR = tmp_storage
+
 # --- shared instances ---
-neural = NeuralMemory("storage/neural_memory.json")
-dna = DNAMemory("storage/dna_memory.json")
+neural = NeuralMemory(os.path.join(STORAGE_DIR, "neural_memory.json"))
+dna = DNAMemory(os.path.join(STORAGE_DIR, "dna_memory.json"))
 encoder = SemanticDNAEncoder()
 reinforcement = ReinforcementEngine()
-attention = DynamicAttention()
-graph = KnowledgeGraph("storage/knowledge_graph.json")
+attention = DynamicAttention(os.path.join(STORAGE_DIR, "attention_memory.json"))
+graph = KnowledgeGraph(os.path.join(STORAGE_DIR, "knowledge_graph.json"))
 graph_search = GraphSearch()
-inference_engine = InferenceEngine()
-concept_engine = ConceptEngine()
-concept_discovery = ConceptDiscovery()
-experience_memory = ExperienceMemory()
+inference_engine = InferenceEngine(os.path.join(STORAGE_DIR, "inference_memory.json"))
+concept_engine = ConceptEngine(os.path.join(STORAGE_DIR, "concept_memory.json"))
+concept_discovery = ConceptDiscovery(os.path.join(STORAGE_DIR, "discovered_concepts.json"))
+experience_memory = ExperienceMemory(os.path.join(STORAGE_DIR, "experience_memory.json"))
 learning_engine = LearningEngine()
-policy = PolicyEngine()
+policy = PolicyEngine(os.path.join(STORAGE_DIR, "policy_memory.json"))
 fitness_engine = FitnessEngine()
 selection_engine = SelectionEngine()
 mutation_engine = MutationEngine()
@@ -115,7 +148,7 @@ def consolidate():
 @app.post("/search")
 def search(body: QueryIn):
     q_emb = encoder.embedding(body.query)
-    classifier = ChromosomeClassifier()
+    classifier = ChromosomeClassifier(os.path.join(STORAGE_DIR, "chromosomes.json"))
     chromosome = classifier.classify(body.query)
     neural_mems = neural.get_all()
     all_genes = dna.get_all()

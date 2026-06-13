@@ -40,5 +40,12 @@
         "source": "NEURAL",
         "score": 0.21100356467191492,
         "timestamp": "2026-06-12 00:46:33.804170"
+    },
+    {
+        "query": "Horse",
+        "result": "Python is a programming language",
+        "source": "NEURAL",
+        "score": 0.18036448803489824,
+        "timestamp": "2026-06-13 20:26:48.955831"
     }
 ]

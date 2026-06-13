@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
-import Dashboard from './pages/Dashboard'
-import DNAViewer from './pages/DNAViewer'
-import SearchPage from './pages/SearchPage'
-import EvolutionPage from './pages/EvolutionPage'
-import GraphPage from './pages/GraphPage'
-import AttentionPage from './pages/AttentionPage'
-import ConceptsPage from './pages/ConceptsPage'
-import LearningPage from './pages/LearningPage'
+import React, { useState, lazy, Suspense } from 'react'
+
+const Dashboard = lazy(() => import('./pages/Dashboard'))
+const DNAViewer = lazy(() => import('./pages/DNAViewer'))
+const SearchPage = lazy(() => import('./pages/SearchPage'))
+const EvolutionPage = lazy(() => import('./pages/EvolutionPage'))
+const GraphPage = lazy(() => import('./pages/GraphPage'))
+const AttentionPage = lazy(() => import('./pages/AttentionPage'))
+const ConceptsPage = lazy(() => import('./pages/ConceptsPage'))
+const LearningPage = lazy(() => import('./pages/LearningPage'))
 
 const NAV = [
   { id: 'dashboard',  label: 'Dashboard',   icon: '⬡' },
@@ -114,7 +115,16 @@ export default function App() {
 
       {/* Main */}
       <main style={{ flex: 1, overflow: 'auto', padding: 28, background: 'var(--bg)' }}>
-        <Page />
+        <Suspense fallback={
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60vh' }}>
+            <div style={{ textAlign: 'center' }}>
+              <div className="spinner" style={{ width: 32, height: 32, margin: '0 auto 12px' }} />
+              <div style={{ color: 'var(--muted)', fontSize: 13 }}>Loading page component…</div>
+            </div>
+          </div>
+        }>
+          <Page />
+        </Suspense>
       </main>
     </div>
   )

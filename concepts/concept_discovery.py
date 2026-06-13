@@ -11,57 +11,25 @@ from concepts.concept_naming import (
 
 class ConceptDiscovery:
 
-    def __init__(self):
+    def __init__(self, path="storage/discovered_concepts.json"):
+        self.path = path
+        self.clustering = ClusteringEngine()
+        self.naming = ConceptNaming()
 
-        self.clustering = (
-            ClusteringEngine()
-        )
-
-        self.naming = (
-            ConceptNaming()
-        )
-
-    def load(
-
-    self,
-
-    path="storage/discovered_concepts.json"
-
-):
-
+    def load(self, path=None):
+        if path is None:
+            path = self.path
         try:
-
-            with open(
-                path,
-                "r"
-            ) as f:
-
+            with open(path, "r") as f:
                 return json.load(f)
-
         except:
-
             return []
 
-    def save(
-
-        self,
-
-        concepts,
-
-        path="storage/discovered_concepts.json"
-
-    ):
-
-        with open(
-            path,
-            "w"
-        ) as f:
-
-            json.dump(
-                concepts,
-                f,
-                indent=4
-            )
+    def save(self, concepts, path=None):
+        if path is None:
+            path = self.path
+        with open(path, "w") as f:
+            json.dump(concepts, f, indent=4)
 
     def discover(
 

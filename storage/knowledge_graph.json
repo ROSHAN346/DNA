@@ -34,5 +34,11 @@
             "relation": "is",
             "target": "The Best"
         }
+    ],
+    "He": [
+        {
+            "relation": "is_a",
+            "target": "Good Boy"
+        }
     ]
 }

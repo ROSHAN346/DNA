@@ -2,16 +2,53 @@
     {
         "cluster": 2,
         "concept": "hello_guys",
-        "size": 1,
+        "size": 3,
         "members": [
-            "Hello . How are  you guys"
+            "Concept: hello guys cats love's drink",
+            "Hello . How are  you guys",
+            "Concept: hello guys python programming language"
         ],
         "chromosomes": [
+            "hello_guys",
+            "hello_guys",
             "hello_guys"
         ]
     },
     {
         "cluster": 0,
+        "concept": "hose_best_comrade",
+        "size": 1,
+        "members": [
+            "Hose is the best comrade"
+        ],
+        "chromosomes": [
+            "hose_best_comrade"
+        ]
+    },
+    {
+        "cluster": 3,
+        "concept": "good",
+        "size": 1,
+        "members": [
+            "He is a good boy"
+        ],
+        "chromosomes": [
+            "good"
+        ]
+    },
+    {
+        "cluster": 4,
+        "concept": "cats_love's_drink",
+        "size": 1,
+        "members": [
+            "Cats love's to drink milk"
+        ],
+        "chromosomes": [
+            "cats_love's_drink"
+        ]
+    },
+    {
+        "cluster": 1,
         "concept": "python_programming_language",
         "size": 1,
         "members": [
@@ -19,17 +56,6 @@
         ],
         "chromosomes": [
             "python_programming_language"
-        ]
-    },
-    {
-        "cluster": 1,
-        "concept": "hello_guys",
-        "size": 1,
-        "members": [
-            "Concept: hello guys python programming language"
-        ],
-        "chromosomes": [
-            "hello_guys"
         ]
     }
 ]
