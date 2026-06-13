@@ -5,7 +5,7 @@ import {
 } from 'recharts'
 import {
   Dna, Brain, Share2, Lightbulb, GitBranch, Zap,
-  PlusCircle, RefreshCw, Activity, TrendingUp,
+  PlusCircle, RefreshCw, Activity, TrendingUp, Trash2,
 } from 'lucide-react'
 import { api } from '../api'
 
@@ -101,6 +101,21 @@ export default function Dashboard() {
     load()
   }
 
+  const clearAllData = async () => {
+    if (!window.confirm("Are you sure you want to clear all DNA and memory data? This will completely reset the brain state and cannot be undone.")) {
+      return
+    }
+    setMsg({ text: 'Clearing memory…', type: 'info' })
+    try {
+      await api.clearMemory()
+      setMsg({ text: '✓ Brain data completely cleared', type: 'success' })
+      pushActivity("Brain and DNA memory cleared completely", "warn")
+      load()
+    } catch (err) {
+      setMsg({ text: 'Error: ' + err.message, type: 'error' })
+    }
+  }
+
   // Build chromosome bar chart data
   const chromoData = stats?.chromosome_counts
     ? Object.entries(stats.chromosome_counts)
@@ -138,15 +153,25 @@ export default function Dashboard() {
             Real-time state of the DNA Mimic cognitive framework
           </p>
         </div>
-        <button
-          className="btn-secondary"
-          onClick={() => load(true)}
-          style={{ display: 'flex', alignItems: 'center', gap: 6 }}
-          disabled={refreshing}
-        >
-          <RefreshCw size={13} style={{ animation: refreshing ? 'spin .7s linear infinite' : 'none' }} />
-          Refresh
-        </button>
+        <div style={{ display: 'flex', gap: 8 }}>
+          <button
+            className="btn-secondary"
+            onClick={() => load(true)}
+            style={{ display: 'flex', alignItems: 'center', gap: 6 }}
+            disabled={refreshing}
+          >
+            <RefreshCw size={13} style={{ animation: refreshing ? 'spin .7s linear infinite' : 'none' }} />
+            Refresh
+          </button>
+          <button
+            className="btn-danger"
+            onClick={clearAllData}
+            style={{ display: 'flex', alignItems: 'center', gap: 6 }}
+          >
+            <Trash2 size={13} />
+            Clear All Data
+          </button>
+        </div>
       </div>
 
       {/* Stat cards */}

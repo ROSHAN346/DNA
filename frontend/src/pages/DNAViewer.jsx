@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Trash2 } from 'lucide-react'
 import { api } from '../api'
 
 function GenomeBar({ genome = '' }) {
@@ -37,6 +38,21 @@ export default function DNAViewer() {
     api.getDNAMemory().then(setGenes).finally(() => setLoading(false))
   }, [])
 
+  const clearAllData = async () => {
+    if (!window.confirm("Are you sure you want to clear all DNA and memory data? This will completely reset the brain state and cannot be undone.")) {
+      return
+    }
+    setLoading(true)
+    try {
+      await api.clearMemory()
+      setGenes([])
+    } catch (err) {
+      alert("Error: " + err.message)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   const shown = genes.filter(g =>
     !filter || g.knowledge?.toLowerCase().includes(filter.toLowerCase()) ||
     g.chromosome?.toLowerCase().includes(filter.toLowerCase())
@@ -46,9 +62,19 @@ export default function DNAViewer() {
 
   return (
     <div>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
-        <h2 style={{ fontSize: 20 }}>🧬 DNA Viewer</h2>
-        <span className="badge">{genes.length} genes</span>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <h2 style={{ fontSize: 20 }}>🧬 DNA Viewer</h2>
+          <span className="badge">{genes.length} genes</span>
+        </div>
+        <button
+          className="btn-danger"
+          onClick={clearAllData}
+          style={{ display: 'flex', alignItems: 'center', gap: 6 }}
+        >
+          <Trash2 size={13} />
+          Clear DNA Data
+        </button>
       </div>
 
       <input

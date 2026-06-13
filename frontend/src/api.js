@@ -17,6 +17,7 @@ export const api = {
   getNeuralMemory: () => req('GET', '/memory/neural'),
   getDNAMemory: () => req('GET', '/memory/dna'),
   consolidate: () => req('POST', '/memory/consolidate'),
+  clearMemory: () => req('POST', '/memory/clear'),
   // search
   search: (query) => req('POST', '/search', { query }),
   // evolution

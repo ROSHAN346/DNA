@@ -143,6 +143,20 @@ def consolidate():
     return {"status": "done", "genes": len(dna.get_all())}
 
 
+@app.post("/memory/clear")
+def clear_all_memory():
+    neural.save_all([])
+    dna.save_all([])
+    attention.save({})
+    graph.save({})
+    inference_engine.save([])
+    concept_engine.save([])
+    concept_discovery.save([])
+    experience_memory.save([])
+    policy.save({"genes": {}, "chromosomes": {}, "concepts": {}})
+    return {"status": "cleared"}
+
+
 # ── Search ────────────────────────────────────────────────────────────────────
 
 @app.post("/search")
